@@ -16,7 +16,8 @@ The EV focus tool will help to get the important insider information for the Ele
 ![](images/EV%20Focus%20Tool.png)
 
 ### Requirements 
-  - Python version >= 3.7 
-  - Install virtual environment `python3 -m venv venv`
-  - Activate virtual env by `source venv\bin\activate`
-  - 
+  - Python version >= 3.9 
+  - cd EV_focus_tool/
+  - bash ./create_virtualenv.sh
+  - uvicorn app.api:app --reload
+ 
