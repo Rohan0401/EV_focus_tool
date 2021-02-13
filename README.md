@@ -14,7 +14,7 @@ The EV focus tool will help to get the important insider information for the Ele
 
 ## ARCHITECTURE DIAGRAM 
 
-![](images/EV%20Focus%20Tool.png)
+![](images/arch_diag.jpeg)
 
 ### Requirements 
   - Python version >= 3.9 
