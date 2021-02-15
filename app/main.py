@@ -1,3 +1,5 @@
+import os
+
 import uvicorn
 from api.routes.api import router as api_router
 from core.config import API_PREFIX, DEBUG, PROJECT_NAME, VERSION
@@ -19,4 +21,8 @@ def get_application() -> FastAPI:
 app = get_application()
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=False, debug=False)
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = os.environ.get("PORT", 8080)
+    reload = os.environ.get("RELOAD", False)
+    debug = os.environ.get("DEBUG", False)
+    uvicorn.run("main:app", host=host, port=int(port), reload=reload, debug=False)
