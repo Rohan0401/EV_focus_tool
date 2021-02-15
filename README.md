@@ -28,6 +28,11 @@ The EV focus tool will help to get the important insider information for the Ele
 - Pip
 - Poetry (Python Package Manager)
 
+## Running using docker 
+
+- Install docker, docker-compose
+- Run `./run.sh <env-name>`, for instance `./run.sh local` for local development
+
 ### M.L Model Environment
 
 ```sh
