@@ -15,12 +15,6 @@ The EV focus tool will help to get the important insider information for the Ele
 ## ARCHITECTURE DIAGRAM 
 
 ![](images/arch_diag.jpeg)
-
-### Requirements 
-  - Python version >= 3.9 
-  - cd EV_focus_tool/
-  - bash ./create_virtualenv.sh
-  - uvicorn app.api:app --reload
  
 ## Development Requirements
 

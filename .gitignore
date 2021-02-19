@@ -1,5 +1,5 @@
 .vscode
-.venv
+venv/
 app/.env
 
 forge.yaml
