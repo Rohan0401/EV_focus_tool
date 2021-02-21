@@ -56,3 +56,5 @@ bower_components
 
 .env_*
 .idea/
+
+.ipynb_checkpoints/

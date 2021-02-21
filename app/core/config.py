@@ -27,3 +27,4 @@ logger.configure(handlers=[{"sink": sys.stderr, "level": LOGGING_LEVEL}])
 
 MODEL_PATH = config("MODEL_PATH", default="./ml/model/")
 MODEL_NAME = config("MODEL_NAME", default="model.pkl")
+URL_PATH = config("URL_PATH", default='http://finviz.com/quote.ashx?t=')
