@@ -13,6 +13,6 @@ envsubst < .env.template > .env_${1}
 
 export $(grep -v '^#' .env_${1} | xargs)
 
-#docker-compose -p localrunner -f docker-compose.yml down
-#docker-compose -p localrunner -f docker-compose.yml build
-#docker-compose -p localrunner -f docker-compose.yml up
+docker-compose -p localrunner -f docker-compose.yml down
+docker-compose -p localrunner -f docker-compose.yml build
+docker-compose -p localrunner -f docker-compose.yml up
