@@ -2,4 +2,6 @@
 
 printenv
 
-python app/main.py
+#python app/main.py
+
+make run
