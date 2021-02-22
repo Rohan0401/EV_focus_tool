@@ -4,7 +4,7 @@ SHELL := /bin/bash
 # -----------------------------------------------------------------------------
 
 ifeq ($(TIMEOUT),)
-TIMEOUT := 60
+TIMEOUT := 360
 endif
 
 ifeq ($(MODEL_PATH),)
