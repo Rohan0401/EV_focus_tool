@@ -14,7 +14,7 @@ COPY poetry.lock pyproject.toml Makefile .env.example ./
 #    poetry config virtualenvs.create false && \
 #    poetry install --no-dev
 
-RUN make install
+# RUN make install
 
 COPY . ./
 
