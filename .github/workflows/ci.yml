@@ -58,11 +58,11 @@ jobs:
       run: heroku container:login
 #      run: echo ${HEROKU_API_KEY} | docker login --username=${HEROKU_EMAIL} registry.heroku.com --password-stdin
 
-    - name: Create app
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_APP_NAME: evfocustool
-      run: heroku create ${HEROKU_APP_NAME}
+#    - name: Create app
+#      env:
+#        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#        HEROKU_APP_NAME: evfocustool
+#      run: heroku create ${HEROKU_APP_NAME}
 
     - name: Build and push
       env:
