@@ -49,25 +49,16 @@ jobs:
 #        docker-compose -p localrunner -f docker-compose.yml build
 #        docker-compose -p localrunner -f docker-compose.yml up
 
-
-
     - name: Login to Heroku Container registry
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-#        HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
       run: heroku container:login
 #      run: echo ${HEROKU_API_KEY} | docker login --username=${HEROKU_EMAIL} registry.heroku.com --password-stdin
-
-#    - name: Create app
-#      env:
-#        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-#        HEROKU_APP_NAME: evfocustool
-#      run: heroku create ${HEROKU_APP_NAME}
 
     - name: Build and push
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_APP_NAME: evfocustool
+        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       run: heroku container:push -a ${HEROKU_APP_NAME} web
 #      run: docker build . --file Dockerfile --tag registry.heroku.com/${HEROKU_APP_NAME}/web
 
@@ -75,7 +66,6 @@ jobs:
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_APP_NAME: evfocustool
+        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       run: heroku container:release -a ${HEROKU_APP_NAME} web
-#      run: heroku container:release -a ${HEROKU_APP_NAME} web
 #      run: heroku container:run -a ${HEROKU_APP_NAME} web
