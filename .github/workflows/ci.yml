@@ -50,10 +50,9 @@ jobs:
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      run: |
-#        docker build . --file Dockerfile --tag registry.heroku.com/${HEROKU_APP_NAME}/web
-        heroku container:push -a ${HEROKU_APP_NAME} web
-        echo Hello
+      run: heroku container:push -a ${HEROKU_APP_NAME} web
+#      run: docker build . --file Dockerfile --tag registry.heroku.com/${HEROKU_APP_NAME}/web
+
 
     - name: Release
       env:
