@@ -1,6 +1,6 @@
 # EV_focus_tool
 
-![build](https://github.com/Rohan0401/EV_focus_tool/workflows/CI/badge.svg)
+![build](https://github.com/RohanVardhan/EV_focus_tool/workflows/CI/badge.svg)
 
 ## OVERVIEW
 This is design proposal for the EV Focus Tool (https://github.com/Rohan0401/EV_focus_tool) . The document contains detailed plan to develop tool. 
