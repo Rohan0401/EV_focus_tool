@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-printenv
+#python app/main.py
 
-python app/main.py
+make install
+make run
