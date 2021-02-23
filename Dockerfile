@@ -8,6 +8,7 @@ COPY poetry.lock pyproject.toml Makefile .env.example ./
 #    pip install poetry && \
 #    poetry config virtualenvs.create false && \
 #    poetry install --no-dev
-# RUN make install
+RUN make install
 COPY . ./
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
+CMD make run

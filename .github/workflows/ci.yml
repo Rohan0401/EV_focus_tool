@@ -39,33 +39,30 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-#    - name: Build and deploy to Heroku
-#      env:
-#        ENVIRONMENT: prod
-#      run: |
-#        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-#        git push heroku HEAD:ci -f
-#        docker-compose -p localrunner -f docker-compose.yml down
-#        docker-compose -p localrunner -f docker-compose.yml build
-#        docker-compose -p localrunner -f docker-compose.yml up
-
     - name: Login to Heroku Container registry
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
 #      run: echo ${HEROKU_API_KEY} | docker login --username=${HEROKU_EMAIL} registry.heroku.com --password-stdin
 
-    - name: Build and push
+    - name: Build
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      run: heroku container:push -a ${HEROKU_APP_NAME} web
-#      run: docker build . --file Dockerfile --tag registry.heroku.com/${HEROKU_APP_NAME}/web
+        PORT: 8080
+#      run: heroku container:push -a ${HEROKU_APP_NAME} web
+      run: docker build . --file Dockerfile --tag registry.heroku.com/${HEROKU_APP_NAME}/web
 
+    - name: Push
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        PORT: 8080
+      run: docker push registry.heroku.com/${HEROKU_APP_NAME}/web
 
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        PORT: 8080
       run: heroku container:release -a ${HEROKU_APP_NAME} web
-#      run: heroku container:run -a ${HEROKU_APP_NAME} web
