@@ -1,11 +1,11 @@
 from typing import Any
 
 import joblib
-from core.errors import PredictException
+from app.core.errors import PredictException
 from fastapi import APIRouter, HTTPException
 from loguru import logger
-from models.prediction import HealthResponse, MachineLearningResponse
-from services.predict import MachineLearningModelHandlerScore as model
+from app.models.prediction import HealthResponse, MachineLearningResponse
+from app.services.predict import MachineLearningModelHandlerScore as model
 
 router = APIRouter()
 
