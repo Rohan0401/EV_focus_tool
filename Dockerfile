@@ -4,11 +4,6 @@ EXPOSE 8080
 WORKDIR /src
 ENV PYTHONPATH src
 COPY poetry.lock pyproject.toml Makefile .env.example ./
-#RUN pip install --upgrade pip && \
-#    pip install poetry && \
-#    poetry config virtualenvs.create false && \
-#    poetry install --no-dev
 RUN make install
 COPY . ./
-#ENTRYPOINT ["./entrypoint.sh"]
-CMD make run
+ENTRYPOINT ["./entrypoint.sh"]

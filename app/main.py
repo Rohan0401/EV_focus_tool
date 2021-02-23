@@ -25,4 +25,4 @@ if __name__ == "__main__":
     port = os.environ.get("PORT", 8080)
     reload = os.environ.get("RELOAD", False)
     debug = os.environ.get("DEBUG", False)
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=reload, debug=debug)
+    uvicorn.run("main:app", host="0.0.0.0", reload=reload, debug=debug)
