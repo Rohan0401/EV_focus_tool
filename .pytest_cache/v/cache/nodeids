@@ -1,0 +1,7 @@
+[
+  "tests/test_pagination_behavior.py::test_pagenation_400_initial_default",
+  "tests/test_pagination_behavior.py::test_pagenation_400_10th_page",
+  "tests/test_pagination_behavior.py::test_pagenation_400_start_0",
+  "tests/test_pagination_behavior.py::test_pagenation_400_start_1",
+  "tests/test_pagination_behavior.py::test_pagenation_400_set_start_1_equals_True_and_init_as_pagenumber_as_0"
+]

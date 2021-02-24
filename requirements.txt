@@ -4,3 +4,4 @@ joblib==1.0.1
 loguru==0.5.3
 pandas==1.2.2
 beautifulsoup4==4.9.3
+lxml==4.6.2
