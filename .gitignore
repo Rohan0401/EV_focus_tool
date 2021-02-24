@@ -58,3 +58,5 @@ bower_components
 .idea/
 
 .ipynb_checkpoints/
+
+.pytest_cache/

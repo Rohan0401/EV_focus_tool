@@ -1,10 +1,10 @@
 from typing import Any
 
-from core.errors import GetStockException
+from app.core.errors import GetStockException
 from fastapi import APIRouter, HTTPException
 from loguru import logger
-from models.stocktrade import StockInsiderResponse, StockFundamentalsResponse, StockNewsResponse
-from services.stock import StockTraderHandler as stocks
+from app.models.stocktrade import StockInsiderResponse, StockFundamentalsResponse, StockNewsResponse
+from app.services.stock import StockTraderHandler as stocks
 
 router = APIRouter()
 

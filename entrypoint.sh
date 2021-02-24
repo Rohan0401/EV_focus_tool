@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-printenv
-
-python app/main.py
+uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080} --reload

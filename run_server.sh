@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Environment is ${1}"
+
 export ENVIRONMENT=${1}
 
 echo "Setting environment variables"

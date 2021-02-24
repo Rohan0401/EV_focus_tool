@@ -4,8 +4,8 @@ import bs4
 from bs4 import BeautifulSoup as soup
 from urllib.request import Request, urlopen
 from typing import List, Dict
-from core.errors import GetStockException
-from core.config import URL_PATH
+from app.core.errors import GetStockException
+from app.core.config import URL_PATH
 from loguru import logger
 
 
